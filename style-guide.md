@@ -13,11 +13,11 @@ The designs were created to the following widths:
 
 #### Text
 
-- Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%)
-- Moderate Violet (chat on the left): hsl(276, 55%, 52%)
-- Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
-- Grayish Blue (placeholder text): hsl(206, 6%, 79%)
-- Very Dark Desaturated Violet (main heading): hsl(271, 36%, 24%)
+<!-- - Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%) -->
+<!-- - Moderate Violet (chat on the left): hsl(276, 55%, 52%)
+- Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%) -->
+<!-- - Grayish Blue (placeholder text): hsl(206, 6%, 79%) -->
+- Very Dark Desaturated Violet (main heading): hsl(271, 15%, 43%)hsl(271, 15%, 43%)
 - Dark Grayish Violet (paragraph): hsl(270, 7%, 64%)
 
 #### Gradients
@@ -29,9 +29,9 @@ These two colors are the vibrant background colors you see throughout the design
 
 ### Secondary
 
-- White: hsl(0, 0%, 100%)
-- Light Grayish Violet (app background): hsl(270, 20%, 96%)
-- Very Dark Desaturated Violet (submit button background): hsl(271, 36%, 24%)
+<!-- - White: hsl(0, 0%, 100%) -->
+<!-- - Light Grayish Violet (app background): hsl(270, 20%, 96%) -->
+<!-- - Very Dark Desaturated Violet (submit button background): hsl(271, 36%, 24%) -->
 - Very Light Magenta (radio button outline): hsl(289, 100%, 72%)
 
 ## Typography

@@ -1,9 +1,22 @@
 //colors
-$color-bg: #ffffff;
+$color-bg: hsl(0, 0%, 100%);
+$color-main-header:  hsl(271, 15%, 43%);
+$color-paragraph:  hsl(270, 7%, 64%);
+$color-placeholder-text: hsl(206, 6%, 79%);
+$color-app-sub-heading: hsl(276, 100%, 81%);
+$color-app-bg: hsl(270, 20%, 96%);
+$color-left-chat:  hsl(276, 55%, 52%);
+$color-right-chat:  hsl(271, 15%, 43%);
+$color-submit-button: hsl(271, 36%, 24%);
+$color-gradient: linear-gradient(hsl(293, 100%, 63%) hsl(264, 100%, 61%));
+
+$shadow-main: 0px 0px 3px rgba(201, 201, 201, 0.616);
+
+
 
 $color: hsl(276, 100%, 81%);
 $color:  hsl(276, 55%, 52%);
-$color:  hsl(271, 15%, 43%);
+
 $color:  hsl(206, 6%, 79%);
 $color:  hsl(271, 36%, 24%);
 $color:  hsl(270, 7%, 64%);
@@ -21,6 +34,13 @@ $weight-light: 400;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    height: auto;
+}
 body {
     position: relative;
     background-color: yellow;
@@ -33,6 +53,7 @@ h1 {
     font-size: 2rem;
     line-height: 3rem;
 }
+
 
 p {
     font-size: 1rem;
@@ -67,43 +88,143 @@ p {
 }
 
 .app {
-    background: #000;
+    background: $color-bg;
     width: 300px;
     height: 500px;
     border-radius: 25px;
     display: grid;
     place-items: center;
+    box-shadow: $shadow-main;
 
 
     &__inner {
-        background-color: blue;
         width: 280px;
         height: 480px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
+        box-shadow: $shadow-main;
 
         &__header {
             flex: 1;
-            background-color: pink;
+            background-color: $color-app-sub-heading;
+            background-image: linear-gradient(90deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
             border-radius: 20px 20px 0px 0px;
+            display: flex;
+            flex-direction: column;
+
+            &__curve {
+                flex: 1;
+                display: flex;
+                border-radius: 20px 20px 0px 0px;
+            }
+            &__content {
+                flex: 5;
+                display: flex;
+                align-items: center;
+            }
         }
 
         &__body {
             flex: 6;
-            background-color: green;
+            background-color: $color-app-bg;
             border-radius: 0px 0px 20px 20px;
         }
     }
     
 }
+.header__area1 {
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
 
-.chat {
+    i {
+        color: $color-bg;
+        font-size: 0.8rem;
+    }
+
+}
+.header__area2 {
+    flex: 1;
+    img {
+        width: 100%;
+        max-height: 30px;
+        border-radius: 50px;
+        border: 2px solid $color-bg;
+    }
+}
+.header__area3 {
+    flex: 6;
+    padding: 5px;
+    margin-left: 5px;
+    color: $color-bg;
+
+    h2 {
+        font-size: 0.85rem;
+        line-height: 0.8rem;
+        font-weight: $weight-heavy;
+    }
+
+    p {
+        font-size: 0.6rem;
+        line-height: 1.2rem;
+        font-weight: $weight-medium;
+        color: $color-app-sub-heading;
+    }
+}
+.header__area4 {
+    flex: 1;
+    i {
+        color: $color-bg;
+        font-size: 0.8rem;
+    }
+}
+.curve {
     background-color: $color-bg;
-    margin: 5px 0px;
-    min-height: 40px;
+    width: 60%;
+    height: 30px;
+    margin: 0px auto;
+    border-radius: 50px;
+    transform: translateY(-10px);
 }
 
+.chat {
+    // background-color: $color-bg;
+    margin: 5px 0px;
+    min-height: 40px;
+    p {
+        font-size: 0.55rem;
+        line-height: 0.9rem;
+        font-weight: $weight-heavy;
+        color: $color-app-sub-heading;
+    }
+    &__pop-left {
+        color: $color-left-chat;
+        max-width: 60%;
+        border-radius: 10px 10px 10px 0px;
+        padding: 3px 30px 3px 10px;
+        margin-left: 12px;
+        box-sizing: border-box;
+        background-color: hsl(270, 100%, 94%);
+    }
+    &__pop-right {
+        color: black;
+        max-width: 60%;
+        min-height: 30px;
+        border-radius: 10px 10px 0px 10px;
+        padding: 3px 30px 3px 10px;
+        margin-left: 12px;
+        box-sizing: border-box;
+        background-color: $color-bg;
+        box-shadow: $shadow-main;
+        margin-right: 10px;
+    }
+}
+.chat-right {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
 .chat__box {
     border-radius: 50px;
     display: grid;
@@ -113,22 +234,32 @@ p {
     &__inner {
         width: 95%;
         min-height: 35px;
-        background-color: red;
+        background-color: $color-bg;
         border-radius: 50px;
         display: flex;
         align-items: center;
+        padding: 5px;
+        box-shadow: $shadow-main;
 
         &__text-area {
             flex: 5;
+
+            p {
+                font-size: 0.7rem;
+                padding-left: 15px;
+                color: $color-placeholder-text;
+            }
         }
         &__button {
             flex: 1;
+            text-align: right;
 
             a {
-                padding: 5px;
-                background-color: black;
+                padding: 5px 10px;
+                background-color: $color-submit-button;
                 border-radius: 50px;
                 color: white;
+                box-shadow: $shadow-main;
             }
         }
     }
