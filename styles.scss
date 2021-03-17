@@ -1,3 +1,22 @@
+@mixin media-query ($size) {
+    @if $size == desktop {
+        @media screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media screen and (max-width: 600px) {
+            @content;
+        }
+    }
+}
+
+
 //colors
 $color-bg: hsl(0, 0%, 100%);
 $color-main-header:  hsl(271, 15%, 43%);
@@ -43,7 +62,7 @@ img {
 }
 body {
     position: relative;
-    background-color: yellow;
+    // background-color: yellow;
     min-height: 100vh;
     max-width: 1440px;
     font-family: $font-main;
@@ -52,6 +71,7 @@ body {
 h1 {
     font-size: 2rem;
     line-height: 3rem;
+    color: $color-main-header;
 }
 
 
@@ -67,6 +87,10 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    @include media-query(tablet) {
+        flex-wrap: wrap;
+    }
+
 
     &__image {
         flex: 1;
@@ -74,7 +98,7 @@ p {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        background-color: red;
+        // background-color: red;
         padding: 50px;
     }
 
@@ -84,34 +108,39 @@ p {
         min-height: 100vh;
         display: flex;
         align-items: center;
+
+        p {
+            color: $color-paragraph;
+        }
     }
 }
 
 .app {
     background: $color-bg;
     width: 300px;
-    height: 500px;
+    height: 520px;
     border-radius: 25px;
     display: grid;
     place-items: center;
-    box-shadow: $shadow-main;
+    box-shadow: 0px 0px 7px rgba(150, 150, 150, 0.616);
+
 
 
     &__inner {
         width: 280px;
-        height: 480px;
+        height: 500px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        box-shadow: $shadow-main;
+        // box-shadow: $shadow-main;
 
         &__header {
             flex: 1;
-            background-color: $color-app-sub-heading;
             background-image: linear-gradient(90deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
-            border-radius: 20px 20px 0px 0px;
+            border-radius: 20px 20px 5px 5px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0px 0px 3px rgba(36, 36, 36, 0.616);
 
             &__curve {
                 flex: 1;
@@ -122,6 +151,7 @@ p {
                 flex: 5;
                 display: flex;
                 align-items: center;
+                border-radius: 20px 20px 20px 20px;
             }
         }
 
@@ -202,15 +232,16 @@ p {
         color: $color-left-chat;
         max-width: 60%;
         border-radius: 10px 10px 10px 0px;
-        padding: 3px 30px 3px 10px;
+        padding: 3px 20px 3px 10px;
         margin-left: 12px;
         box-sizing: border-box;
         background-color: hsl(270, 100%, 94%);
+        box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
     }
     &__pop-right {
         color: black;
         max-width: 60%;
-        min-height: 30px;
+        min-height: 35px;
         border-radius: 10px 10px 0px 10px;
         padding: 3px 30px 3px 10px;
         margin-left: 12px;
@@ -218,12 +249,75 @@ p {
         background-color: $color-bg;
         box-shadow: $shadow-main;
         margin-right: 10px;
+        box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
     }
 }
 .chat-right {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    
+}
+
+.pop-right__center {
+    display: flex;
+    align-items: center;
+}
+.chat__image {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    
+    img {
+        height: 40px;
+        width: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
+    }
+
+    &__item {
+        margin-left: 8px;
+    }
+}
+
+.price__tab {
+    background-image: linear-gradient(90deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+    max-width: 60%;
+    min-height: 35px;
+    border-radius: 10px 10px 10px 0px;
+    padding: 3px 10px 3px 10px;
+    margin-left: 12px;
+    box-sizing: border-box;
+    display: flex;
+    box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
+    align-items: center;
+
+    &__icon {
+        flex: 1;
+        i {
+            color: $color-app-sub-heading;
+        }
+    }
+
+    &__content {
+        flex: 3;
+
+        p {
+            color: $color-app-sub-heading;
+        }
+    }
+
+    &__price {
+        flex: 1;
+
+        p {
+            font-size: 1rem;
+            color: $color-bg;
+        }
+    }
+}
+.chat__center {
+    display: flex;
 }
 .chat__box {
     border-radius: 50px;
@@ -260,6 +354,7 @@ p {
                 border-radius: 50px;
                 color: white;
                 box-shadow: $shadow-main;
+                box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
             }
         }
     }
