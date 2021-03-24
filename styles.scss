@@ -115,9 +115,10 @@ p {
         background-image: linear-gradient(-20deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
         z-index: -1;
 
-        @include media-query(tablet) {
+        @include media-query(mobile) {
             height: 500px;
-            width: 215px;
+            width: 415px;
+            left: -14rem;
         }
 
     }
@@ -132,6 +133,11 @@ p {
         border-radius: 1000px 1000px 0px 0px;
         background-color:  	hsl(290, 37%, 97%);
         z-index: -10;
+
+        @include media-query(mobile) {
+            height: 60vh;
+            right: -15rem;
+        }
     }
 
 
@@ -143,6 +149,10 @@ p {
         align-items: center;
         // background-color: red;
         padding: 50px;
+
+        @include media-query(mobile) {
+            min-height: 400px;
+        }
     }
 
     &__content {
@@ -151,6 +161,13 @@ p {
         min-height: 100vh;
         display: flex;
         align-items: center;
+        // background: red;
+
+        @include media-query(mobile) {
+            text-align: center;
+            min-height: 300px;
+            padding: 40px;
+        }
 
         h1 {
             margin-bottom: 20px;
