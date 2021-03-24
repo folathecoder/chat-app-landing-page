@@ -28,7 +28,8 @@ $color-app-bg: hsl(270, 20%, 96%);
 $color-left-chat:  hsl(275, 65%, 56%);
 $color-right-chat:  hsl(271, 17%, 37%);
 $color-submit-button: hsl(271, 36%, 24%);
-$color-gradient: linear-gradient(hsl(293, 100%, 63%) hsl(264, 100%, 61%));
+$color-icon: hsla(206, 7%, 79%, 0.555);
+$color-gradient: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
 
 $shadow-outter-app: 0px 0px 100px rgba(53, 53, 53, 0.219);
 $shadow-main: 0px 0px 2px rgba(187, 187, 187, 0.295);
@@ -65,26 +66,72 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    line-height: 6rem;
+    line-height: 3rem;
     font-weight: $weight-medium;
     color: $color-heading-text;
+
+    @include media-query (tablet) {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+    }
 }
 
 
 p {
     font-size: 1rem;
     line-height: 1.7rem;
+
+    @include media-query (tablet) {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
 }
 
 //main
 
 .hero {
+    position: relative;
     max-width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    overflow-x: hidden;
+    margin: 0px auto;
+
     @include media-query(tablet) {
+        min-height: 100px;
         flex-wrap: wrap;
+    }
+
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        // left: -20rem;
+        height: 95vh;
+        width: 415px;
+        border-radius: 0px 0px 1000px 1000px;
+        background-image: linear-gradient(-20deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+        z-index: -1;
+
+        @include media-query(tablet) {
+            height: 500px;
+            width: 215px;
+        }
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: -13rem;
+        height: 85vh;
+        width: 425px;
+        border-radius: 1000px 1000px 0px 0px;
+        background-color:  	hsl(290, 37%, 97%);
+        z-index: -10;
     }
 
 
@@ -105,9 +152,17 @@ p {
         display: flex;
         align-items: center;
 
+        h1 {
+            margin-bottom: 20px;
+        }
+
         p {
             color: $color-paragraph;
             margin-right: 130px;
+
+            @include media-query(tablet) {
+                margin-right: 0px;;
+            }
         }
     }
 }
@@ -137,7 +192,7 @@ p {
             border-radius: 20px 20px 5px 5px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.308);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.178);
 
             &__curve {
                 flex: 1;
@@ -262,6 +317,9 @@ p {
     flex-direction: column;
     
 }
+.chat__left__wide {
+    padding-right: 10px;
+}
 
 .pop-right__center {
     display: flex;
@@ -293,14 +351,14 @@ p {
     margin-left: 12px;
     box-sizing: border-box;
     display: flex;
-    box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
+    // box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
     align-items: center;
 
     &__icon {
         flex: 1;
         i {
-            color: saturate($color: $color-app-sub-heading, $amount: -60)
-            // color: $color-app-sub-heading;
+            color: $color-icon;
+            font-weight: $color-icon;
 
         }
     }
@@ -326,7 +384,7 @@ p {
     margin-top: -4px;
 }
 .drag__margin {
-    margin-top: 4px;
+    margin-top: 8px;
 }
 .chat__center {
     display: flex;
@@ -351,7 +409,7 @@ p {
             flex: 5;
 
             p {
-                font-size: 0.7rem;
+                font-size: 0.6rem;
                 padding-left: 15px;
                 color: $color-placeholder-text;
             }
@@ -370,4 +428,9 @@ p {
             }
         }
     }
+}
+
+
+.attribution {
+    display: none;
 }
