@@ -10,7 +10,7 @@
         }
     }
     @else if $size == mobile {
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 738px) {
             @content;
         }
     }
@@ -115,6 +115,12 @@ p {
         background-image: linear-gradient(-20deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
         z-index: -1;
 
+        @include media-query(tablet) {
+            height: 900px;
+            width: 415px;
+            left: -14rem;
+        }
+
         @include media-query(mobile) {
             height: 500px;
             width: 415px;
@@ -142,7 +148,7 @@ p {
 
 
     &__image {
-        flex: 1;
+        flex: 1 368px;
         min-height: 100vh;
         display: flex;
         justify-content: flex-end;
@@ -151,22 +157,25 @@ p {
         padding: 50px;
 
         @include media-query(mobile) {
+            justify-content: center;
             min-height: 400px;
         }
     }
 
     &__content {
-        flex: 1;
+        flex: 1 368px;
         padding: 50px;
         min-height: 100vh;
         display: flex;
         align-items: center;
         // background: red;
 
-        @include media-query(mobile) {
-            text-align: center;
+        @include media-query(tablet) {
             min-height: 300px;
             padding: 40px;
+        }
+        @include media-query(mobile) {
+            text-align: center;
         }
 
         h1 {

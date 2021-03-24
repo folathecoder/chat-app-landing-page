@@ -80,7 +80,15 @@ p {
   z-index: -1;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
+  .hero::before {
+    height: 900px;
+    width: 415px;
+    left: -14rem;
+  }
+}
+
+@media screen and (max-width: 738px) {
   .hero::before {
     height: 500px;
     width: 415px;
@@ -100,7 +108,7 @@ p {
   z-index: -10;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 738px) {
   .hero::after {
     height: 60vh;
     right: -15rem;
@@ -109,8 +117,8 @@ p {
 
 .hero__image {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 368px;
+          flex: 1 368px;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -124,16 +132,19 @@ p {
   padding: 50px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 738px) {
   .hero__image {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     min-height: 400px;
   }
 }
 
 .hero__content {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 368px;
+          flex: 1 368px;
   padding: 50px;
   min-height: 100vh;
   display: -webkit-box;
@@ -144,11 +155,16 @@ p {
           align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .hero__content {
-    text-align: center;
     min-height: 300px;
     padding: 40px;
+  }
+}
+
+@media screen and (max-width: 738px) {
+  .hero__content {
+    text-align: center;
   }
 }
 
