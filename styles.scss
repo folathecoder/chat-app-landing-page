@@ -1,3 +1,5 @@
+// ========== Media Queries ==========
+
 @mixin media-query ($size) {
     @if $size == desktop {
         @media screen and (max-width: 1200px) {
@@ -16,39 +18,37 @@
     }
 }
 
+// ========== Colors ==========
 
-//colors
 $color-bg: hsl(0, 0%, 100%);
 $color-main-header:  hsl(271, 15%, 43%);
 $color-paragraph:  hsl(270, 7%, 64%);
 $color-placeholder-text: hsl(206, 6%, 79%);
 $color-app-sub-heading: hsl(276, 100%, 81%);
-$color-heading-text: hsl(0, 0%, 0%);
+$color-heading-text: hsl(270, 13%, 28%);
 $color-app-bg: hsl(270, 20%, 96%);
 $color-left-chat:  hsl(275, 65%, 56%);
 $color-right-chat:  hsl(271, 17%, 37%);
 $color-submit-button: hsl(271, 36%, 24%);
 $color-icon: hsla(206, 7%, 79%, 0.555);
 $color-gradient: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
-
 $shadow-outter-app: 0px 0px 100px rgba(53, 53, 53, 0.219);
 $shadow-main: 0px 0px 2px rgba(187, 187, 187, 0.295);
 
+// ========== Font Family & Font Weights ==========
 
-
-//font
 $font-main: 'Rubik', sans-serif;
 $weight-heavy: 700;
 $weight-medium: 500;
 $weight-light: 400;
 
-//base
+// ========== Base Styling & CSS Reset  ==========
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 a {
     text-decoration: none;
 }
@@ -58,36 +58,35 @@ img {
 }
 body {
     position: relative;
-    // background-color: yellow;
     min-height: 100vh;
     max-width: 1440px;
     font-family: $font-main;
 }
+
+// ========== Typography ==========
 
 h1 {
     font-size: 2.5rem;
     line-height: 3rem;
     font-weight: $weight-medium;
     color: $color-heading-text;
-
     @include media-query (tablet) {
         font-size: 2.2rem;
         line-height: 2.8rem;
     }
 }
-
-
 p {
     font-size: 1rem;
     line-height: 1.7rem;
-
     @include media-query (tablet) {
         font-size: 0.9rem;
         line-height: 1.5rem;
     }
 }
 
-//main
+// ============================= Main Styling ================================
+
+// ========== Main Container ==========
 
 .hero {
     position: relative;
@@ -97,38 +96,30 @@ p {
     align-items: center;
     overflow-x: hidden;
     margin: 0px auto;
-
     @include media-query(tablet) {
         min-height: 100px;
         flex-wrap: wrap;
     }
-
-    
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        // left: -20rem;
         height: 95vh;
         width: 415px;
         border-radius: 0px 0px 1000px 1000px;
         background-image: linear-gradient(-20deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
         z-index: -1;
-
         @include media-query(tablet) {
             height: 900px;
             width: 415px;
             left: -14rem;
         }
-
         @include media-query(mobile) {
             height: 500px;
             width: 415px;
             left: -14rem;
         }
-
     }
-
     &::after {
         content: '';
         position: absolute;
@@ -139,37 +130,30 @@ p {
         border-radius: 1000px 1000px 0px 0px;
         background-color:  	hsl(290, 37%, 97%);
         z-index: -10;
-
         @include media-query(mobile) {
             height: 60vh;
             right: -15rem;
         }
     }
-
-
     &__image {
         flex: 1 368px;
         min-height: 100vh;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        // background-color: red;
         padding: 50px;
-
         @include media-query(mobile) {
             justify-content: center;
             min-height: 400px;
+            padding: 40px;
         }
     }
-
     &__content {
         flex: 1 368px;
         padding: 50px;
         min-height: 100vh;
         display: flex;
         align-items: center;
-        // background: red;
-
         @include media-query(tablet) {
             min-height: 300px;
             padding: 40px;
@@ -177,21 +161,21 @@ p {
         @include media-query(mobile) {
             text-align: center;
         }
-
         h1 {
             margin-bottom: 20px;
         }
-
         p {
             color: $color-paragraph;
             margin-right: 130px;
-
             @include media-query(tablet) {
                 margin-right: 0px;;
             }
         }
     }
 }
+
+
+// ========== App Illustration Design ==========
 
 .app {
     background: $color-bg;
@@ -201,17 +185,12 @@ p {
     display: grid;
     place-items: center;
     box-shadow: $shadow-outter-app;
-
-
-
     &__inner {
         width: 250px;
         height: 510px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        // box-shadow: $shadow-main;
-
         &__header {
             flex: 1;
             background-image: linear-gradient(90deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
@@ -219,7 +198,6 @@ p {
             display: flex;
             flex-direction: column;
             box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.178);
-
             &__curve {
                 flex: 1;
                 display: flex;
@@ -232,25 +210,21 @@ p {
                 border-radius: 20px 20px 20px 20px;
             }
         }
-
         &__body {
             flex: 6;
             background-color: $color-app-bg;
             border-radius: 0px 0px 20px 20px;
         }
     }
-    
 }
 .header__area1 {
     flex: 1;
     text-align: right;
     padding-right: 10px;
-
     i {
         color: $color-bg;
         font-size: 0.8rem;
     }
-
 }
 .header__area2 {
     flex: 1;
@@ -266,13 +240,11 @@ p {
     padding: 5px;
     margin-left: 5px;
     color: $color-bg;
-
     h2 {
         font-size: 0.85rem;
         line-height: 0.8rem;
         font-weight: $weight-heavy;
     }
-
     p {
         font-size: 0.6rem;
         line-height: 1.2rem;
@@ -295,9 +267,7 @@ p {
     border-radius: 50px;
     transform: translateY(-10px);
 }
-
 .chat {
-    // background-color: $color-bg;
     margin: 5px 0px;
     min-height: 40px;
     p {
@@ -314,7 +284,6 @@ p {
         box-sizing: border-box;
         background-color: hsl(270, 100%, 94%);
         box-shadow: $shadow-main;
-
         p {
             color: $color-left-chat;
         }
@@ -341,12 +310,10 @@ p {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    
 }
 .chat__left__wide {
     padding-right: 10px;
 }
-
 .pop-right__center {
     display: flex;
     align-items: center;
@@ -354,20 +321,17 @@ p {
 .chat__image {
     display: flex;
     justify-content: flex-end;
-    margin-right: 10px;
-    
+    margin-right: 10px;   
     img {
         height: 40px;
         width: auto;
         border-radius: 10px;
         box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
     }
-
     &__item {
         margin-left: 8px;
     }
 }
-
 .price__tab {
     background-image: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
     max-width: 75%;
@@ -377,29 +341,22 @@ p {
     margin-left: 12px;
     box-sizing: border-box;
     display: flex;
-    // box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
     align-items: center;
-
     &__icon {
         flex: 1;
         i {
             color: $color-icon;
             font-weight: $color-icon;
-
         }
     }
-
     &__content {
         flex: 3;
-
         p {
             color: $color-app-sub-heading;
         }
     }
-
     &__price {
         flex: 1;
-
         p {
             font-size: 1rem;
             color: $color-bg;
@@ -420,7 +377,6 @@ p {
     display: grid;
     place-items: center;
     background-color: transparent;
-
     &__inner {
         width: 95%;
         min-height: 35px;
@@ -430,10 +386,8 @@ p {
         align-items: center;
         padding: 5px;
         box-shadow: $shadow-main;
-
         &__text-area {
             flex: 5;
-
             p {
                 font-size: 0.6rem;
                 padding-left: 15px;
@@ -443,7 +397,6 @@ p {
         &__button {
             flex: 1;
             text-align: right;
-
             a {
                 padding: 3px 8px;
                 background-color: $color-submit-button;
@@ -457,6 +410,22 @@ p {
 }
 
 
+// ========== Footer Copyright ==========
+
 .attribution {
-    display: none;
+    p {
+        font-size: 0.7rem;
+        line-height: 1rem;;
+        text-align: center;
+        padding: 0px 60px;
+    }
+
+    a {
+        color: $color-left-chat;
+        font-weight: $weight-medium;
+    }
+
+    a:hover {
+        color: $color-right-chat;
+    }
 }

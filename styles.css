@@ -25,7 +25,7 @@ h1 {
   font-size: 2.5rem;
   line-height: 3rem;
   font-weight: 500;
-  color: black;
+  color: #473e51;
 }
 
 @media screen and (max-width: 992px) {
@@ -138,6 +138,7 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
     min-height: 400px;
+    padding: 40px;
   }
 }
 
@@ -540,7 +541,19 @@ p {
           box-shadow: 0px 0px 3px rgba(187, 187, 187, 0.616);
 }
 
-.attribution {
-  display: none;
+.attribution p {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  text-align: center;
+  padding: 0px 60px;
+}
+
+.attribution a {
+  color: #9b46d8;
+  font-weight: 500;
+}
+
+.attribution a:hover {
+  color: #5f4e6e;
 }
 /*# sourceMappingURL=styles.css.map */
