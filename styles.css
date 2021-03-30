@@ -48,6 +48,51 @@ p {
   }
 }
 
+.one__tab {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.two__tab {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.three__tab {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.four__tab {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.five__tab {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.six__tab {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.seven__tab {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.eight__tab {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.app__button_animate {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
 .hero {
   position: relative;
   max-width: 100vw;
